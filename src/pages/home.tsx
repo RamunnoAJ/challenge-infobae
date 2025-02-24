@@ -4,6 +4,7 @@ import { BASE_URL } from "../services/base";
 import { Tag } from "../types";
 import PostCard from "../components/post-card";
 import TagScroll from "../components/tag-scroll";
+import { getPosts } from "../services/posts";
 
 export default function Home() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -22,8 +23,8 @@ export default function Home() {
 
     (async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/posts?limit=20`);
-        setPosts(response.data);
+        const response = await getPosts();
+        setPosts(response);
       } catch (e) {
         console.error(e);
       }

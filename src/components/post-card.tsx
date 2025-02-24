@@ -53,7 +53,7 @@ export default function PostCard({ post }: { post: Post }) {
           </div>{" "}
         </>
       ) : (
-        <></>
+        <PostComments setShowComment={setShowComments} postId={post.id} />
       )}
     </article>
   );
