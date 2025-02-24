@@ -1,5 +1,15 @@
+import { Route, Routes } from "react-router";
+import Navbar from "./components/nav-bar";
+import Home from "./pages/home";
+
 function App() {
-  return <h1 className="text-xl text-red-500">Inicio</h1>;
+  return (
+    <Routes>
+      <Route element={<Navbar />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
