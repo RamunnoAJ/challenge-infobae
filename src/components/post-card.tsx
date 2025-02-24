@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Post, User } from "../types";
 import axios from "axios";
 import { BASE_URL } from "../services/base";
+import PostComments from "./post-comments";
 
 export default function PostCard({ post }: { post: Post }) {
   const [user, setUser] = useState<User | null>(null);
